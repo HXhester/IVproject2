@@ -1,0 +1,41 @@
+country,date,trust
+Sweden,1992,60
+Sweden,1997,57
+Sweden,2002,64
+Sweden,2007,64
+Sweden,2012,60
+China,1992,59
+China,1997,50
+China,2002,52
+China,2007,49
+China,2012,60
+United States,1992,50
+United States,1997,35
+United States,2002,36
+United States,2007,39
+United States,2012,35
+Japan,1992,38
+Japan,1997,40
+Japan,2002,40
+Japan,2007,37
+Japan,2012,36
+India,1992,34
+India,1997,33
+India,2002,39
+India,2007,21
+India,2012,21
+Spain,1992,32
+Spain,1997,29
+Spain,2002,35
+Spain,2007,28
+Spain,2012,19
+Argentina,1992,22
+Argentina,1997,17
+Argentina,2002,15
+Argentina,2007,17
+Argentina,2012,19
+Turkey,1992,10
+Turkey,1997,6
+Turkey,2002,16
+Turkey,2007,9
+Turkey,2012,12
