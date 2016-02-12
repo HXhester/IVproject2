@@ -84,3 +84,11 @@ body {
 #states .active {
   fill: orange;
 }
+
+p {
+    font-size: 16px;
+}
+
+ul {
+    font-size: 16px;
+}

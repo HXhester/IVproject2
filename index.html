@@ -4,8 +4,8 @@
     <link rel="stylesheet" href="style.css">
 <head>
 <body>
-    <title>Project2</title>
-    <h1>Most people can be trust </h1>
+    <title>Project 2: Visualizing the World Through its Own Worldview</title>
+    <h1>Most people can be trusted </h1>
 <!-- load the d3.js library -->    
 <script src="d3.js"></script>
 
@@ -34,7 +34,6 @@ var line = d3.svg.line()
     .x(function(d) { return x(d.date); })
     .y(function(d) { return y(d.trust); });
 	
-    
 // Adds the svg canvas
 var svg = d3.select("body")
     .append("svg")
@@ -44,6 +43,31 @@ var svg = d3.select("body")
         .attr("transform", 
               "translate(" + margin.left + "," + margin.top + ")");
 var legend = d3.select("body").append("div");
+    //cursor
+//        var cursor = svg.append("g")
+//      .attr("class", "cursor")
+//      .style("display", null);
+//
+//    cursor.append("line")
+//      .attr("stroke", "black")
+//      .attr("x1", 0)
+//      .attr("x2", 0)
+//      .attr("y1", 0)
+//      .attr("y2", height);
+//    
+//    svg.append("rect")
+//      .attr("class", "overlay")
+//      .attr("width", width)
+//      .attr("height", height)
+//      .style("opacity",0)
+//      .on("mousemove", function(e){
+//        cursor=svg.select(".cursor");
+//        console.log(this,e);
+//        var x0=d3.mouse((this))[0];
+//        cursor.attr("transform","translate(" + x0+ "," + 0 + ")");
+//    });
+
+
 // Get the data
     console.log("reading");
 var centered;    
@@ -589,38 +613,7 @@ d3.csv("time-series.csv", function(error, data) {
 	   .text('(%)');
     drawMap(getYear(1992));
 //    // mouse track to determine data in map
-    var cursor = svg.append("g")
-      .attr("class", "cursor")
-      .style("display", "none");
-    //var bisectDate = d3.bisector(function(d){return d.date;}).left;
 
-    cursor.append("line")
-      .attr("stroke", "black")
-      .attr("x1", 0)
-      .attr("x2", 0)
-      .attr("y1", 0)
-      .attr("y2", height);
-    
-//    svg.append("rect")
-//      .attr("class", "overlay")
-//      .attr("width", width)
-//      .attr("height", height)
-//      .style("opacity",0)
-//      .on("mouseover", function() { cursor.style("display", null); })
-//      .on("mouseout", function() { cursor.style("display", "none"); });
-      //.on("mousemove", mousemove);
-
-    function mousemove() {
-        cursor=svg.select(".cursor");
-        var x0=d3.mouse(this)[0];
-//        var x0 = x.invert(d3.mouse(this)[0]),
-//            i = bisectDate(data, x0, 1),
-//            d0 = data[i - 1],
-//            d1 = data[i],
-//            d = x0 - d0.date > d1.date - x0 ? d1 : d0;
-        console.log(x0);
-        cursor.attr("transform", "translate(" + x0+ "," + 0 + ")");
-    }
           
     function findMaxY(data){  // Define function "findMaxY"
     var maxYValues = data.map(function(d) { 
@@ -643,20 +636,37 @@ d3.csv("time-series.csv", function(error, data) {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.1.0/topojson.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
-<script>
-
-//***********************************MAP*****************************************************//
-    
-
-    
-    
-    
-
-    
-</script>
     
 <script> 
 //***********************************PIE CHART & CROSS***************************************//    
 </script>
+<p>Take the data within the duration from 1995-2014 and of the question “trust in people” as a sample analytic trail.</p>
+<h2>My trail</h2>
+    <ul>
+        <li>Data processing</li>
+            <p>According to what I want to visualize, get data downloaded from WVS and convert to data file with csv format</p>
+        <li>Visual mappings</li>
+            <p>Show changes along timeline with line chart. Show comparison between countries at the same time with map coded by color.</p>
+        <li>View transformations</li>
+            <p>Click on the point/countries on the map, map zoom in and show the detail percentage distribution of all choices. Cross by other factors like gender, age, and other questions to show the correlation. </p>
+        <li>My learning</li>
+            <p>There are always correlations between different variables, show them in a clear way make the correlations easy to find. The following is what I want to achieve, however I only developed part of them.</p>
+        <img src="pic/1.png">
+    </ul>
+<h2>WVS trail</h2>
+    <ul>
+        <li>Data processing</li>
+            <p>The raw data are choices of the question and basic demographical statistics. The main data processing is counting and calculating percentage of different answers. Besides, in view of Maps, choices are weighted and summed up as map parameters.</p>
+            <img src="pic/2.png">
+        <li>Visual mappings</li>
+            <p>In tab <em>responses</em>, various types of bar chart, pie chart. In tab <em>maps</em>, color code the parameters. In tab <em>time series</em>, line chart.</p>
+            <img src="pic/3.png"> <img src="pic/4.png"> <img src="pic/5.png">
+        <li>View transformations</li>
+            <p>Cross by demographical statistics and answers to other questions. Filter different choices. Maps: zoom into different continents. Filter indicator to display and filter the range of index. And time series.</p>
+            <img src="pic/6.png"> <img src="pic/7.png"> <img src="pic/8.png">
+        <li>Acquired insights</li>
+            <p>Responses: at current time wave, clear comparison between countries for different choices. Crossing by other variables shows correlation between them; Maps: geographically show the weighted map parameter; Time series: display the changes along the timeline.</p>
+        <li>Criticize</li>
+            <p>It can only show one dimension cross the question at a time. Problems in multi-variables display, which can’t show time, countries different choices at the same time.It’s not so necessary to display various types of bar chart, just keep one which is most useful.</p>
+    </ul>
 </body>
